@@ -1,7 +1,7 @@
 function Header() {
     return(
         <header>
-           <p style={{fontSize:"1.2rem"}}> Expense Tracker</p>
+           <h2 style={{textAlign:"center", marginBottom: "50px"}}> Expense Tracker</h2>
         </header>
     )
 }

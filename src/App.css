@@ -2,8 +2,11 @@
 
   padding:15px;
   margin:auto;
-  border: 2px solid red;
   width:30%;
+}
+
+h3{
+  color:black;
 }
 
 .balance{
@@ -11,6 +14,66 @@
 }
 
 .income-expense{
-  padding:1rem;
+  padding:0.1rem;
   display:flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align:center;
+  background-color: rgb(253, 253, 253);
+  border-radius: 5px;
+  box-shadow:0 0 10px lightgray;
+  font-weight: bold;
+}
+
+.income{
+  color:green;
+}
+
+.expense{
+  color:red;
+}
+
+.Mborder{
+height:100px;
+width:1px;
+background-color:lightgray;
+}
+
+.transaction{
+  padding:0.5rem;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align:center;
+  background-color: rgb(253, 253, 253);
+  border-radius: 5px;
+  box-shadow:0 0 10px lightgray;
+  font-weight: bold;
+}
+
+.indicator{
+  width:10%;
+  height:100%;
+  background-color:green;
+}
+
+.addForm{
+ display:flex;
+ flex-direction:column;
+}
+
+.myinput{
+  height:2rem;
+  margin-bottom:1rem;
+  border:1px solid lightgray;
+}
+
+.mysubmit{
+
+  height:3rem;
+  background-color: rgb(144, 102, 235);
+  color:white;
+  font-weight: bold;
+  letter-spacing:2px;
+  cursor: pointer;
 }
