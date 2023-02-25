@@ -28,12 +28,10 @@ function App() {
 
   ])
 
-  const addTransaction = (e,transaction)=>{
-    e.preventDefault(); 
+  const addTransaction = (transaction)=>{
     const id= Math.floor(Math.random() *1000) +1;
     const newTransaction = {id, ...transaction};
     setTransactions([...transactions, newTransaction]);
-    console.log(transaction)
   }
 
   return (
@@ -42,7 +40,7 @@ function App() {
       <Balance/>
       <IncomeExpenses/>
       <Transactions transactions={transactions}/>
-      <Add onSubmit = {addTransaction}/>
+      <Add onAdd = {addTransaction}/>
     </div>
   );
 
