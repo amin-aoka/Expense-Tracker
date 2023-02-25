@@ -1,8 +1,8 @@
-function Transaction (transaction){
+function Transaction ({transaction}){
     return(
         <div className="transaction">
-            <span>{text = transaction.text}</span>
-            <span>{amount = transaction.amount}</span>
+            <span>{transaction.text}</span>
+            <span>{transaction.amount}</span>
         </div>
     )
 }

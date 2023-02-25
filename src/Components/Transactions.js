@@ -1,11 +1,12 @@
-import { useState } from 'react';
 import Transaction from './Transaction.js';
-export default function Transactions ({transaction}) {
+export default function Transactions ({transactions}) {
 
     return(
         <div>
             <h3>History</h3>
-            <Transaction transaction={transaction}/>
+            {transactions.map((transaction)=>{
+               return( <Transaction key ={transaction.id} transaction= {transaction}/>)
+            })}
         </div>
     )
 }

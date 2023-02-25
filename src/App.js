@@ -5,9 +5,9 @@ import Balance from './Components/Balance.js';
 import IncomeExpenses from './Components/IncomeExpenses.js';
 import Transactions from './Components/Transactions.js';
 import {Add} from './Components/Add.js'
-import { useState } from 'react';
 
 function App() {
+
   const [transactions,setTransactions]=useState([
     { 
       id:0,
@@ -18,14 +18,24 @@ function App() {
       id:1,
       text:"Buy Book",
       amount: "-$20.00" 
+    },
+    { 
+      id:3,
+      text:"Buy bicycle",
+      amount: "-$200.00" 
     }
+
 
   ])
 
-  const addTransaction = (e)=>{
+  const addTransaction = (e,transaction)=>{
     e.preventDefault(); 
-    alert("submit clicked")
+    const id= Math.floor(Math.random() *1000) +1;
+    const newTransaction = {id, ...transaction};
+    setTransactions([...transactions, newTransaction]);
+    console.log(transaction)
   }
+
   return (
     <div className="container">
       <Header/>
@@ -35,6 +45,12 @@ function App() {
       <Add onSubmit = {addTransaction}/>
     </div>
   );
+
+
+
 }
 
+
+
 export default App;
+
