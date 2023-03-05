@@ -5,7 +5,7 @@ function Transaction ({transaction, onClick}){
         <div className="transaction">
             <span>{transaction.text}</span>
             <span>{transaction.amount}</span>
-            <FaTimes onClick= {onClick} className = "closeIcon"/>
+            <FaTimes onClick= {()=> onClick(transaction.id)} className = "closeIcon"/>
         </div>
     )
 }

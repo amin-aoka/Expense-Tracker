@@ -36,10 +36,7 @@ function App() {
 
   const onRemove = (id)=>{
     console.log("REMOVED")
-   transactions.map(transaction=>{
-   return (transaction.id===id ? setTransactions(transactions.pop(transaction)): null)
-   })
-
+   setTransactions( transactions.filter((transaction)=>transaction.id !== id))
   }
 
   return (
