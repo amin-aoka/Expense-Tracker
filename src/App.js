@@ -34,12 +34,20 @@ function App() {
     setTransactions([...transactions, newTransaction]);
   }
 
+  const onRemove = (id)=>{
+    console.log("REMOVED")
+   transactions.map(transaction=>{
+   return (transaction.id===id ? setTransactions(transactions.pop(transaction)): null)
+   })
+
+  }
+
   return (
     <div className="container">
       <Header/>
       <Balance/>
       <IncomeExpenses/>
-      <Transactions transactions={transactions}/>
+      <Transactions transactions={transactions} onClick ={onRemove}/>
       <Add onAdd = {addTransaction}/>
     </div>
   );
