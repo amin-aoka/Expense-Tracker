@@ -19,10 +19,9 @@ export function Add ({onAdd}){
                  onChange = {e=> {setText (e.target.value)}}></input>
                 
                 <label>Amount</label>
-                <input className="myinput" type = "number" value={amount} 
-                onChange= {e=>{setAmount(e.target.value)}}></input>
- 
-                <input className="mysubmit" type="submit" value="Add Transaction" ></input>
+                <input className="myinput" type = "number" 
+                onChange= {(e)=>{setAmount(e.target.value)}}></input>
+                 <input className="mysubmit" type="submit" value="Add Transaction" ></input>
 
             </form>
            

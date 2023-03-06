@@ -7,7 +7,8 @@ import Transactions from './Components/Transactions.js';
 import {Add} from './Components/Add.js'
 
 function App() {
-
+  const [income, setIncome]=useState(0);
+  const [expense,setExpense]=useState(0);
   const [transactions,setTransactions]=useState([
     { 
       id:0,
@@ -24,18 +25,17 @@ function App() {
       text:"Buy bicycle",
       amount: "-$200.00" 
     }
-
-
   ])
 
   const addTransaction = (transaction)=>{
     const id= Math.floor(Math.random() *1000) +1;
     const newTransaction = {id, ...transaction};
     setTransactions([...transactions, newTransaction]);
+    setExpense(+newTransaction.amount);
+    setIncome(+newTransaction.amount);
   }
 
   const onRemove = (id)=>{
-    console.log("REMOVED")
    setTransactions( transactions.filter((transaction)=>transaction.id !== id))
   }
 
@@ -43,7 +43,7 @@ function App() {
     <div className="container">
       <Header/>
       <Balance/>
-      <IncomeExpenses/>
+      <IncomeExpenses income ={income} expense={expense}/>
       <Transactions transactions={transactions} onClick ={onRemove}/>
       <Add onAdd = {addTransaction}/>
     </div>
