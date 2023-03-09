@@ -7,32 +7,38 @@ import Transactions from './Components/Transactions.js';
 import {Add} from './Components/Add.js'
 
 function App() {
-  const [income, setIncome]=useState(0);
-  const [expense,setExpense]=useState(0);
+
   const [transactions,setTransactions]=useState([
     { 
       id:0,
       text:"salary",
-      amount: "+$540.00" 
+      amount: 540.00
     },
     { 
       id:1,
       text:"Buy Book",
-      amount: "-$20.00" 
+      amount: 20.00
     },
     { 
       id:3,
       text:"Buy bicycle",
-      amount: "-$200.00" 
+      amount: 200.00
     }
   ])
+
+  const [income, setIncome]=useState(0.00);
+  const [expense,setExpense]=useState(0.00);
 
   const addTransaction = (transaction)=>{
     const id= Math.floor(Math.random() *1000) +1;
     const newTransaction = {id, ...transaction};
     setTransactions([...transactions, newTransaction]);
-    setExpense(+newTransaction.amount);
-    setIncome(+newTransaction.amount);
+    let totalIncome=0;
+    let totalExpense =0;
+    if(newTransaction.amount < 0) {
+      setExpense( transactions.forEach(transaction=>{totalExpense+=transaction.amount}))
+  } else if(newTransaction.amount > 0){ 
+      setIncome( transactions.forEach(transaction=>{totalIncome+=transaction.amount}))
   }
 
   const onRemove = (id)=>{
@@ -53,7 +59,6 @@ function App() {
 
 }
 
-
+}
 
 export default App;
-

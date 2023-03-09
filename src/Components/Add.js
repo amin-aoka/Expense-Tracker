@@ -8,7 +8,7 @@ export function Add ({onAdd}){
         e.preventDefault(); 
         onAdd({text,amount})
         setText("");
-        setAmount("");
+        setAmount();
     }
     return(
         <div>
