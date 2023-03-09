@@ -7,9 +7,22 @@ import Transactions from './Components/Transactions.js';
 import {Add} from './Components/Add.js'
 
 function App() {
-
   const [transactions,setTransactions]=useState([
-
+    { 
+      id:0,
+      text:"salary",
+      amount: 540
+    },
+    { 
+      id:1,
+      text:"Buy Book",
+      amount: 20
+    },
+    { 
+      id:3,
+      text:"Buy bicycle",
+      amount: 200
+    }
   ])
 
   const [income, setIncome]=useState(0);
@@ -19,18 +32,19 @@ function App() {
     const id= Math.floor(Math.random() *1000) +1;
     const newTransaction = {id, ...transaction};
     setTransactions([...transactions, newTransaction]);
-    console.log(newTransaction)
-    let totalIncome=0;
-    let totalExpense =0;
-    if(newTransaction.amount < 0) {
-      transactions.forEach(transaction=>{totalExpense+=transaction.amount})
-    setExpense(totalExpense)
-  }else if(newTransaction.amount > 0){ 
-    transactions.forEach(transaction=>{totalIncome+=transaction.amount})
-    setIncome(totalIncome)
-  }
-  }
+    const updated = [[...transactions, newTransaction]]
+    console.log(updated)
 
+if(newTransaction.amount > 0){ 
+     let resultI= updated.reduce(function (totalIncome, obj) { return totalIncome + obj.amount,      console.log(totalIncome)
+     }, 0);
+     setIncome(resultI)
+  } else if(newTransaction.amount < 0) {
+    let resultE = updated.reduce(function (totalExpense, obj) { return totalExpense + obj.amount}, 0);
+    console.log(resultE)
+    setExpense(resultE)
+}
+  }
   const onRemove = (id)=>{
    setTransactions( transactions.filter((transaction)=>transaction.id !== id))
   }
@@ -45,5 +59,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
