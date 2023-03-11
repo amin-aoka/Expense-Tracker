@@ -3,7 +3,7 @@ const IncomeExpenses = ({income,expense}) => {
         <div className="income-expense">
             <div className= "income">
                 <h3>INCOME</h3>
-                <p style= {{fontSize:"1.5rem"}}> {income}</p>
+                <p style= {{fontSize:"1.5rem"}}>{income}</p>
             </div>
             <span className = "Mborder"></span>
             <div className= "expense">

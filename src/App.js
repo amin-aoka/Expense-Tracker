@@ -25,25 +25,13 @@ function App() {
     }
   ])
 
-  const [income, setIncome]=useState(0);
-  const [expense,setExpense]=useState(0);
+  const [income, setIncome]=useState([0]);
+  const [expense,setExpense]=useState([0]);
 
   const addTransaction = (transaction)=>{
     const id= Math.floor(Math.random() *1000) +1;
     const newTransaction = {id, ...transaction};
     setTransactions([...transactions, newTransaction]);
-    const updated = [[...transactions, newTransaction]]
-    console.log(updated)
-
-if(newTransaction.amount > 0){ 
-     let resultI= updated.reduce(function (totalIncome, obj) { return totalIncome + obj.amount,      console.log(totalIncome)
-     }, 0);
-     setIncome(resultI)
-  } else if(newTransaction.amount < 0) {
-    let resultE = updated.reduce(function (totalExpense, obj) { return totalExpense + obj.amount}, 0);
-    console.log(resultE)
-    setExpense(resultE)
-}
   }
   const onRemove = (id)=>{
    setTransactions( transactions.filter((transaction)=>transaction.id !== id))
