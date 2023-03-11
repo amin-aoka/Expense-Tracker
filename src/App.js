@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Header from './Components/Header.js';
 import Balance from './Components/Balance.js';
@@ -31,16 +31,21 @@ function App() {
   const addTransaction = (transaction)=>{
     const id= Math.floor(Math.random() *1000) +1;
     const newTransaction = {id, ...transaction};
-    setTransactions([...transactions, newTransaction]);
-  }
+    setTransactions([...transactions, newTransaction]) ;
+   }
+
+
   const onRemove = (id)=>{
    setTransactions( transactions.filter((transaction)=>transaction.id !== id))
   }
 
+  let amount =0;
+   transactions.map((item)=>amount += parseFloat(item.amount) )
+
   return (
     <div className="container">
       <Header/>
-      <Balance/>
+      <Balance balance={amount}/>
       <IncomeExpenses income ={income} expense={expense}/>
       <Transactions transactions={transactions} onClick ={onRemove}/>
       <Add onAdd = {addTransaction}/>
