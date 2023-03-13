@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import {React, useState} from 'react';
 import './App.css';
 import Header from './Components/Header.js';
 import Balance from './Components/Balance.js';
@@ -25,11 +25,9 @@ function App() {
   }
 
   const onRemove = (id)=>{
-   //setTransactions( transactions.filter((transaction)=>transaction.id !== id));
+   setTransactions( transactions.filter((transaction)=>transaction.id !== id));
    transactions.map((transaction)=>{
     if (transaction.id === id){
-      let index= transactions.indexOf(transaction.id);
-      transactions.splice(index,1)
         if(transaction.amount >0){
           setIncome(income-transaction.amount)
         }else if (transaction.amount <0){
