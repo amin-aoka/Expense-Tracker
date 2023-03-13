@@ -7,26 +7,10 @@ import Transactions from './Components/Transactions.js';
 import {Add} from './Components/Add.js'
 
 function App() {
-  const [transactions,setTransactions]=useState([
-    { 
-      id:0,
-      text:"salary",
-      amount: 540
-    },
-    { 
-      id:1,
-      text:"Buy Book",
-      amount: 20
-    },
-    { 
-      id:3,
-      text:"Buy bicycle",
-      amount: 200
-    }
-  ])
+  const [transactions,setTransactions]=useState([ ])
 
-  const [income, setIncome]=useState([0]);
-  const [expense,setExpense]=useState([0]);
+  const [income, setIncome]=useState(0);
+  const [expense,setExpense]=useState(0);
 
   const addTransaction = (transaction)=>{
     const id= Math.floor(Math.random() *1000) +1;
@@ -51,9 +35,6 @@ function App() {
         }
     }
    })
-  
-   
- 
   }
 
   let amount =0;
