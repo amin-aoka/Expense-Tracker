@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState} from "react"
 
 export function Add ({onAdd}){
 
@@ -6,8 +6,8 @@ export function Add ({onAdd}){
     const [amount,setAmount]=useState();
     const onSubmit = (e)=>{
         e.preventDefault(); 
-        onAdd({text,amount})
-        setText("");
+        onAdd({text,amount});
+        setText("")     
         setAmount();
     }
     return(

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import './App.css';
 import Header from './Components/Header.js';
 import Balance from './Components/Balance.js';
@@ -31,16 +31,33 @@ function App() {
   const addTransaction = (transaction)=>{
     const id= Math.floor(Math.random() *1000) +1;
     const newTransaction = {id, ...transaction};
-    setTransactions([...transactions, newTransaction]) ;
+    setTransactions([...transactions, newTransaction]);
+    let num=parseFloat(newTransaction.amount)
+    if (num > 0){
+      setIncome(parseFloat(income)+num)
+    }else if(num < 0){
+    setExpense(parseFloat(expense)+num)
    }
-
+  }
 
   const onRemove = (id)=>{
-   setTransactions( transactions.filter((transaction)=>transaction.id !== id))
+   setTransactions( transactions.filter((transaction)=>transaction.id !== id));
+   transactions.map((transaction)=>{
+    if (transaction.id === id){
+        if(transaction.amount >0){
+          setIncome(parseFloat(income)-transaction.amount)
+        }else if (transaction.amount <0){
+          setExpense(parseFloat(expense)-transaction.amount)
+        }
+    }
+   })
+  
+   
+ 
   }
 
   let amount =0;
-   transactions.map((item)=>amount += parseFloat(item.amount) )
+  transactions.map((item)=>amount += parseFloat(item.amount) )
 
   return (
     <div className="container">
@@ -52,7 +69,5 @@ function App() {
     </div>
   );
 }
-
-
 
 export default App;

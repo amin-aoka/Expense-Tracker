@@ -5,7 +5,7 @@ function Transaction ({transaction, onClick}){
     return(
         <div className="transaction">
             <span>{transaction.text}</span>
-            <span>{transaction.amount}</span>
+            <span> ${transaction.amount.toFixed(2)}</span>
             <FaTimes onClick= {()=> onClick(transaction.id)} className = "closeIcon"/>
         </div>
     )
