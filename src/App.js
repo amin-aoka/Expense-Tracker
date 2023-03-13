@@ -25,16 +25,18 @@ function App() {
   }
 
   const onRemove = (id)=>{
-   setTransactions( transactions.filter((transaction)=>transaction.id !== id));
+   //setTransactions( transactions.filter((transaction)=>transaction.id !== id));
    transactions.map((transaction)=>{
     if (transaction.id === id){
+      let index= transactions.indexOf(transaction.id);
+      transactions.splice(index,1)
         if(transaction.amount >0){
-          setIncome(parseFloat(income)-transaction.amount)
+          setIncome(income-transaction.amount)
         }else if (transaction.amount <0){
-          setExpense(parseFloat(expense)-transaction.amount)
+          setExpense(expense-transaction.amount)
         }
     }
-   })
+       })
   }
 
   let amount =0;
