@@ -19,7 +19,7 @@ function App() {
     let num=parseFloat(newTransaction.amount)
     if (num > 0){
       setIncome(income+num)
-     
+      
     }else if(num < 0){
       setExpense(expense+num)
    }
