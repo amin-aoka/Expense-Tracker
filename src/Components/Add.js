@@ -13,6 +13,7 @@ export function Add ({onAdd}){
     return(
         <div>
             <h3>Add new transaction</h3>
+            <div className="grayLine"></div>
             <form className="addForm" onSubmit={onSubmit}>
                 <label>Text</label>
                 <input className="myinput" type = "text" placeholder="Enter Your text..."

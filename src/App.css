@@ -112,3 +112,18 @@ background-color:lightgray;
   color:red;
   cursor: pointer;
 }
+
+.grayLine{
+  background-color:lightgray;
+  width:98%;
+  height:1px;
+  margin-bottom: 20px ;
+}
+
+h3{
+  margin-bottom:5px;
+}
+
+.list{
+  margin-bottom: 2rem;
+}
