@@ -18,7 +18,8 @@ export function Add ({onAdd}){
                 <input className="myinput" type = "text" placeholder="Enter Your text..."
                  onChange = {e=> {setText (e.target.value)}}></input>
                 
-                <label>Amount</label>
+                <label> Amount </label>
+               <label>(negative-expense, positive-income)</label>
                 <input className="myinput" type = "number" 
                 onChange= {(e)=>{setAmount(e.target.value)}}></input>
                  <input className="mysubmit" type="submit" value="Add Transaction" ></input>
