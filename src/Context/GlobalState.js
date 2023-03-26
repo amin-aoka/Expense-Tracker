@@ -35,11 +35,11 @@ export const GlobalProvider = ({children})=>{
        })
   }
 
-  let amount =0;
-  transactions.map((item)=>amount += parseFloat(item.amount) )
+  let total =0;
+  transactions.map((item)=>total += parseFloat(item.amount) )
 
     return(
-            <GlobalContext.Provider value = {{amount,income,expense,transactions,onRemove,addTransaction }}>
+            <GlobalContext.Provider value = {{total,income,expense,transactions,onRemove,addTransaction }}>
                 {children}
             </GlobalContext.Provider>
     )
