@@ -1,4 +1,10 @@
-const IncomeExpenses = ({income,expense}) => {
+import { useContext } from "react";
+import { GlobalContext } from "../Context/GlobalState";
+
+const IncomeExpenses = () => {
+    let {income}=useContext(GlobalContext);
+    let {expense}=useContext(GlobalContext)
+
     return(
         <div className="income-expense">
             <div className= "income">

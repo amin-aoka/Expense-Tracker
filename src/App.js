@@ -5,6 +5,7 @@ import Balance from './Components/Balance.js';
 import IncomeExpenses from './Components/IncomeExpenses.js';
 import Transactions from './Components/Transactions.js';
 import {Add} from './Components/Add.js'
+import {GlobalContext} from './Context/GlobalState.js';
 
 function App() {
   const [transactions,setTransactions]=useState([ ])
@@ -42,13 +43,15 @@ function App() {
   transactions.map((item)=>amount += parseFloat(item.amount) )
 
   return (
-    <div className="container">
-      <Header/>
-      <Balance balance={amount}/>
-      <IncomeExpenses income ={income} expense={expense}/>
-      <Transactions transactions={transactions} onClick ={onRemove}/>
-      <Add onAdd = {addTransaction}/>
-    </div>
+    <GlobalContext.Provider value ={{amount,income,expense,transactions,onRemove,addTransaction}}>
+      <div className="container">
+        <Header/>
+        <Balance />
+        <IncomeExpenses/>
+        <Transactions/>
+        <Add/>
+      </div>
+    </GlobalContext.Provider>
   );
 }
 
