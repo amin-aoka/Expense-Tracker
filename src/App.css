@@ -53,6 +53,19 @@ background-color:lightgray;
   margin-bottom: 1rem;
 }
 
+.transaction:hover .closeIcon{
+visibility: visible;
+}
+
+.closeIcon{
+  position: absolute;
+  padding:5px;
+  left:-25px;
+  color:red;
+  cursor: pointer;
+  visibility: hidden;
+}
+
 .incomeMarker{
   position: absolute;
   right:0px;
@@ -106,12 +119,7 @@ background-color:lightgray;
   cursor: pointer;
 }
 
-.closeIcon{
-  position: absolute;
-  left:5px;
-  color:red;
-  cursor: pointer;
-}
+
 
 .grayLine{
   background-color:lightgray;

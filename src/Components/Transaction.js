@@ -1,7 +1,6 @@
 import {FaTimes} from 'react-icons/fa';
 
 function Transaction ({transaction, onClick}){
-    
     transaction.amount=+transaction.amount
     return(
         <div className= {"transaction"}>

@@ -5,7 +5,6 @@ export function Add (){
 
     
     const {addTransaction} =useContext(GlobalContext)
-    console.log(addTransaction)
     const [text,setText]= useState("");
     const [amount,setAmount]=useState();
     const onSubmit = (e)=>{
