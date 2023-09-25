@@ -1,8 +1,12 @@
+
+
 .container{
 
   padding:15px;
-  margin:auto;
+  margin:10px auto;
   width:30%;
+  box-shadow:2px 2px 5px rgb(144, 102, 235), -2px -2px 5px rgb(144, 102, 235);
+  border-radius: 15px;
 }
 
 h3{
@@ -134,4 +138,14 @@ h3{
 
 .list{
   margin-bottom: 2rem;
+}
+
+@media only screen and (max-width:850px){
+
+  .container{
+
+    min-width:80%;
+    max-width:90%;
+  }
+  
 }
