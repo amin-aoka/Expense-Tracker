@@ -24,7 +24,7 @@ export function Add (){
                 
                 <label> Amount </label>
                <label>(negative-expense, positive-income)</label>
-                <input className="myinput" type = "number" 
+                <input className="myinput" type = "number" placeholder="Enter amount of money"
                 onChange= {(e)=>{setAmount(e.target.value)}}></input>
                  <input className="mysubmit" type="submit" value="Add Transaction" ></input>
 
