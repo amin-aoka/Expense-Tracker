@@ -47,7 +47,6 @@ background-color:rgb(144, 102, 235);
   margin-bottom: 1rem;
 }
 
-
 .closeIcon{
   position: absolute;
   padding:5px;
@@ -74,7 +73,6 @@ background-color:rgb(144, 102, 235);
   border-radius: 25px;
 }
 
-
 .indicator{
   width:10%;
   height:100%;
@@ -91,8 +89,6 @@ background-color:rgb(144, 102, 235);
   padding-bottom:5px;
 }
 
-
-
 .myinput{
   height:2rem;
   margin-bottom:1rem;
@@ -101,7 +97,6 @@ background-color:rgb(144, 102, 235);
   border:none;
   color:white;
   outline:none;
-  
 }
 
 ::placeholder{
@@ -123,8 +118,7 @@ background-color:rgb(144, 102, 235);
   box-shadow: 2px 2px 3px rgb(97, 48, 204) ;
   border:none;
   margin-top:25px;
-  bottom:10px;
-   
+  bottom:10px; 
 }
 
 .mysubmit:hover{
@@ -150,7 +144,6 @@ h3{
 @media only screen and (max-width:850px){
 
   .container{
-
     min-width:80%;
     max-width:90%;
   }

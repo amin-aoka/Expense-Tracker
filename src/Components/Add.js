@@ -19,15 +19,14 @@ export function Add (){
             <div className="grayLine"></div>
             <form className="addForm" onSubmit={onSubmit}>
                 <label>Text</label>
-                <input className="myinput" type = "text" placeholder="Enter Your text..."
+                <input className="myinput" type = "text" required placeholder="Enter Your text..."
                  onChange = {e=> {setText (e.target.value)}}></input>
                 
                 <label> Amount </label>
                <label>(negative-expense, positive-income)</label>
-                <input className="myinput" type = "number" placeholder="Enter amount of money"
+                <input className="myinput" type = "number" required placeholder="Enter amount of money"
                 onChange= {(e)=>{setAmount(e.target.value)}}></input>
                  <input className="mysubmit" type="submit" value="Add Transaction" ></input>
-
             </form>
            
         </div>

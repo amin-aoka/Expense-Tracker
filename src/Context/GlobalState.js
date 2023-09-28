@@ -4,8 +4,7 @@ import {React, useState} from 'react';
 export const GlobalContext = createContext({});
 export const GlobalProvider = ({children})=>{
 
-    const [transactions,setTransactions]=useState([ ])
-
+  const [transactions,setTransactions]=useState([ ])
   const [income, setIncome]=useState(0);
   const [expense,setExpense]=useState(0);
 
